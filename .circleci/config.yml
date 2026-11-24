@@ -1,0 +1,13 @@
+version: 2.1
+jobs:
+  host_short:
+    docker:
+      - image: cimg/base:current
+    steps:
+      - run:
+          name: print short hostname
+          command: hostname -s
+workflows:
+  main:
+    jobs:
+      - host_short
